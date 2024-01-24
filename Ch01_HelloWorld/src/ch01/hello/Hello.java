@@ -6,6 +6,7 @@ public class Hello {
 		System.out.println("HelloWorld");
 		System.out.println("HelloW, Java");
 		System.out.println("Hello, Korea");
+		System.out.println("Hello, NCP08");
 		
 		
 	}
