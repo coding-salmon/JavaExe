@@ -12,6 +12,8 @@ public class DataType {
 		String name1 = "Albert";
 				
 		System.out.println(num);		
+		num = 999;
+		System.out.println(num);
 		System.out.println(dnum);		
 		System.out.println(ch);		
 		System.out.println(name);		
