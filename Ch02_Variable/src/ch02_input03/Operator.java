@@ -27,7 +27,7 @@ public class Operator {
 		result = num0 + num1 + num2;
 		System.out.println("결과는 " + result);
 		
-		sc.close();
+		
 		
 		sc.close(); //키보드와 연결을 닫는ㄴ다.
 
