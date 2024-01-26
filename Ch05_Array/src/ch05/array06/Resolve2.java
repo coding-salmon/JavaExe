@@ -1,4 +1,4 @@
-package ch05.array04;
+package ch05.array06;
 
 import java.util.Arrays;
 
