@@ -10,13 +10,13 @@ public class Resolve13 {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		
-		int i=0;
-		do {
-			System.out.println(3*(i+1));
-		i++;
-		}while(i<num) ;
+		for(int i =1; i<=num; i++)
+			System.out.println(3*i);
+		
+		
 	}
 }
+
 		
 		
 		

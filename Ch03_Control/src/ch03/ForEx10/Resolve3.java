@@ -3,8 +3,9 @@ package ch03.ForEx10;
 import java.util.Scanner;
 
 public class Resolve3 {
-
-	public static void main(String[] args) {
+	
+	
+	public static void  methodIf() {
 		System.out.println("정수3개를 입력하시오");
 		
 		Scanner sc = new Scanner(System.in);
@@ -18,19 +19,18 @@ public class Resolve3 {
 		System.out.println("세번째 정수를 입력하시오");
 		int num2 = sc.nextInt();
 		
-		int sum = 0;
-		sum = num +num1;
-		if(sum < num2) {
-			System.out.println("삼각형을 만들수있습니다.");
-		}else {
-			System.out.println("삼각형을 만들수없습니다.");
-		}
+		boolean bTriangle =false;
 		
-		
-		
-		
-		
+		if((num+num1>num2) &&
+			(num1+num2 >num) &&
+				(num+num2>num1)) {
+					bTriangle=true;
+			}
+		 System.out.println("조건"+ bTriangle );
 		sc.close();
-	} 
-
+		
+	}
+	public static void main(String[] args) {
+		methodIf();
+}
 }

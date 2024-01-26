@@ -10,28 +10,23 @@ System.out.println("369게임 1~99중 하나를 입력");
 		
 		
 		Scanner sc = new Scanner(System.in);
+		
 		int num = sc.nextInt();
-		// 나누기  나머지 십의자리 일의자리
-		if(num/3 == 1|| num/3==2 || num/3==3 )
-			System.out.println("짝");
-		else if(num==13 || num== 16 ||num== 19)
-			System.out.println("짝짝");
-		else if(num==23 || num== 26 ||num== 29)
-			System.out.println("짝");
-		else if(num==33 || num== 36 ||num== 39)
-			System.out.println("짝짝");
-		else if(num==43 || num== 46 ||num== 49)
-			System.out.println("짝");
-		else if(num==53 || num== 56 ||num== 59)
-			System.out.println("짝");
-		else if(num==63 || num== 66 ||num== 69)
-			System.out.println("짝짝");
-		else if(num==73 || num== 76 ||num== 79)
-			System.out.println("짝");
-		else if(num==83 || num== 86 ||num== 89)
-			System.out.println("짝");
-		else if(num==93 || num== 96 ||num== 99)
-			System.out.println("짝짝");
+		
+		int n10 = num/10;
+		int n1 = num%10;
+		
+		int cnt = 0;
+		if(n10==3 || n10 ==6 || n10 ==9)
+			cnt++;
+		if(n1==3 || n1 ==6 || n1 ==9)
+			cnt++;
+		
+		if(cnt==1)
+			System.out.println("박수짝"); 
+		else if (cnt==2)
+			System.out.println("박수짝짝");
+		
 		sc.close();	
 
 	}
