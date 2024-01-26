@@ -14,7 +14,7 @@ System.out.println("양의 정수를 입력하시오");
 			
 		System.out.println((i+1)+"감사합니다.");
 
-	}
+	} sc.close();
 
 }
 }

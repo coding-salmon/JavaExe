@@ -12,7 +12,7 @@ public class Resolve1 {
 				Scanner sc = new Scanner(System.in);
 				//78670
 				int num = sc.nextInt();
-				int a =0, b=0, c=0, d=0, e=0, f=0 , g=0;
+				int a =0, b=0, c=0, d=0, e=0, f=0 , g=0, h=0, i=0;
 				
 				a = num/50000;
 				System.out.print("오만원권"+a+"매");
@@ -29,19 +29,20 @@ public class Resolve1 {
 				e = (((num%50000)%10000)%5000)/500;
 				System.out.print("오백원동전"+e+"개");
 				
-//				d = ((num%50000)%10000)/5000;
-//				System.out.print("백원동전"+c+"개");
-//				
-//				d = ((num%50000)%10000)/5000;
-//				System.out.print("오십원동전"+c+"개");
-//				
-//				d = ((num%50000)%10000)/5000;
-//				System.out.print("십원동전"+c+"개");
-//				
-//				d = ((num%50000)%10000)/5000;
-//				System.out.print("일원동전"+c+"개");
+				f = ((((num%50000)%10000)%5000)%500)/100;
+				System.out.print("백원동전"+f+"개");
+				
+				g = (((((num%50000)%10000)%5000)%500)%100)/50;
+				System.out.print("오십원동전"+g+"개");
+				
+				h = ((((((num%50000)%10000)%5000)%500)%100)%50)/10;
+				System.out.print("십원동전"+h+"개");
+				
+				i = (((((((num%50000)%10000)%5000)%500)%100)%50)%10)/1;
+				System.out.print("일원동전"+i+"개");
+				sc.close();
 			}
-				//sc.close();
+				
 
 	}
 
