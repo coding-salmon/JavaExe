@@ -3,17 +3,17 @@ package ch03_control11;
 public class Resolve1 {
 
 	public static void main(String[] args) {
-
-		for (int i = 1; i * 3 <= 100; i++) {
-
-			int sum = 0;
-			sum = (i * 3);
+		int sum= 0;
+		for (int i = 1; i <= 100; i++) {
 			
-			System.out.println(sum);
+			if(i%3==0) {
+				
+				sum += i;
+	
+			}
 			
+						
 			
-		}
-//		int totalsum += sum;
-//			System.out.println(totalsum);
+		}System.out.println(sum);
 	}
 }

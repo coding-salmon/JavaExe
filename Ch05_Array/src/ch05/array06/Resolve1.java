@@ -9,11 +9,12 @@ public class Resolve1 {
 		
 		
 		
-		String[] name = {"일", "이", "삼",	"사","오","육","칠","팔","구","십"};
-		for(int i=0; i <name.length;i++) {
-				System.out.print(name[i]+ " ");
+		String[] names = {"일", "이", "삼",	"사","오","육","칠","팔","구","십"};
+		for(int i=0; i <names.length;i++) {
+				System.out.print(names[i]+ " ");
+				
 		}
-
+		System.out.println("이름은 모두"+names.length);
 	}
 
 }
