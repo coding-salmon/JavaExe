@@ -6,9 +6,7 @@ public class Resolve4 {
 	
 	public static void dandan(int dan) {
 		for(int i=1; i<=9;i++) {
-			
 				System.out.println(dan +"*" +i + "="+dan*i );
-			
 		}
 	}
 

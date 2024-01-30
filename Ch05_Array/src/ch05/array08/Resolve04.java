@@ -5,7 +5,7 @@ import java.util.*;
 public class Resolve04 {
 
 	public static void main(String[] args) {
-		int[] numArr = new int[] { 2, 8, 16, 1, 4,20,0 };
+		int[] numArr = new int[] { 7, 6, 5, 4, 3,2,1 };
 
 		{
 			for (int i = 0; i < numArr.length; i++) {
@@ -17,7 +17,7 @@ public class Resolve04 {
 						numArr[j + 1] = temp;
 
 					}
-				}
+				}System.out.println(Arrays.toString(numArr));
 			}
 		}
 		System.out.println(Arrays.toString(numArr));
