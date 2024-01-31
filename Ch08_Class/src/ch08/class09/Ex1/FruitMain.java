@@ -1,4 +1,4 @@
-package ch08.class08;
+package ch08.class09.Ex1;
 
 /* 
  * <Class와 class간의 상호작용>
@@ -31,8 +31,8 @@ public class FruitMain {
 		seller.showSaleResul();
 		buyer.showBuyResult();
 		
-		buyer.buyApple(seller, 2000);
-		//seller.saleApple(buyer, 2000);
+		//buyer.buyApple(seller, 2000);
+		seller.saleApple(buyer, 2000);
 		
 		seller.showSaleResul();
 		buyer.showBuyResult();

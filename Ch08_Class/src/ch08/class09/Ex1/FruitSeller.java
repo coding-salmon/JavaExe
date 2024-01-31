@@ -1,4 +1,4 @@
-package ch08.class08;
+package ch08.class09.Ex1;
 
 public class FruitSeller {
 	private int numOfApple;				//사과개수
@@ -6,7 +6,6 @@ public class FruitSeller {
 	final int APPLE_PRICE = 1000;		//사과가격(상수) 더이상바꾸지않겠다.
 	
 	public FruitSeller(int numOfApple) {
-		
 		this.numOfApple = numOfApple;
 	}
 	public int saleApple(int money) {
@@ -14,6 +13,13 @@ public class FruitSeller {
 		numOfApple -= num;
 		saleMoney += money;
 		return num;
+		
+	
+	
+	}
+	public void saleApple(FruitBuyer buyer, int money) {
+		this.numOfApple -= buyer.buyApple(money);
+		this.saleMoney += money;
 	}
 	
 	

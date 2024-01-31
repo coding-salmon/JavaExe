@@ -16,20 +16,20 @@ public class RestaurantMain {
 		 * 우리가 직접 만든 사용자 정의 자료형
 		 */
 		// 클래스 객체 (클래스의 변수) = new(힙에 할당) 클래스의 생성자함수 호출;
-//		Restaurant rest= new Restaurant();
-//		rest.sc = sc;
-//		rest.name = "새마을 식당";
-//		rest.viewMenu();
-//		rest.selectFood();
-//		rest.deliveryFood();
-//		
-//		
-//		Restaurant rest1= new Restaurant();
-//		rest1.sc = sc;
-//		rest1.name = "낙원 타코";
-//		rest1.viewMenu();
-//		rest1.selectFood();
-//		rest1.deliveryFood();
+		Restaurant rest= new Restaurant();
+		rest.sc = sc;
+		rest.name = "새마을 식당";
+		rest.viewMenu();
+		rest.selectFood();
+		rest.deliveryFood();
+		
+		
+		Restaurant rest1= new Restaurant();
+		rest1.sc = sc;
+		rest1.name = "낙원 타코";
+		rest1.viewMenu();
+		rest1.selectFood();
+		rest1.deliveryFood();
 		
 		
 		Restaurant rest2= new Restaurant();

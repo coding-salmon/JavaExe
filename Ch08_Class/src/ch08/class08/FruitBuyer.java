@@ -12,6 +12,8 @@ public class FruitBuyer {
 	public void buyApple(FruitSeller seller, int money) {
 		this.numOfApple += seller.saleApple(money);
 		this.money -= money;
+		
+	
 	}
 	public void showBuyResult() {
 		System.out.println("*** 과일 구매자의 현재 상황");
