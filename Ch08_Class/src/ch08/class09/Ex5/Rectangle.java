@@ -11,7 +11,7 @@ public class Rectangle {
 	}
 	
 	public int square() {
-		int width = Math.abs(x2 - x1);
+		int width = Math.abs(x2-x1);
 		int height = Math.abs(y2-y1);
 		return width*height;
 	}
