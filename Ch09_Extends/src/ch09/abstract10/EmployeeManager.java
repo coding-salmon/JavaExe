@@ -14,8 +14,11 @@ public class EmployeeManager {
 		System.out.println("1. 정규직 " );
 		System.out.println("2. 임시직 ");
 		System.out.println("3. 일용직 " );
-		System.out.println("4. 전체정보보기 ");
-		System.out.println("5. 종료 ");
+		System.out.println("4. 정규직 정보만 보기 " );
+		System.out.println("5. 임시직 정보만 보기 " );
+		System.out.println("6. 일용직 정보만 보기 " );
+		System.out.println("7. 전체정보보기 " );
+		System.out.println("8. 종료 ");
 		System.out.println(" 번호 입력 >> ");
 		int sel = sc.nextInt();
 		return sel;
@@ -23,23 +26,45 @@ public class EmployeeManager {
 	
 	
 	private RegularEmployee createregularEmployee() {
-		System.out.println("사번>>");
+		System.out.print("사번>>");
 		String empno =sc.next();
-		System.out.println("이름>>");
+		System.out.print("이름>>");
 		String name =sc.next();
-		System.out.println("연봉>>");
-		String yearSalary =sc.next();
-		System.out.println("보너스>>");
-		String bonus =sc.next();
-		RegularEmployee emp=
+		System.out.print("연봉>>");
+		int yearSalary =sc.nextInt();
+		System.out.print("보너스>>");
+		int bonus =sc.nextInt();
+		RegularEmployee emp = 
 				new RegularEmployee(empno, name, yearSalary, bonus);
 		return emp;
 	}
 	private TempEmployee createTempEmployee() {
-		return null;
+		System.out.print("사번>>");
+		String empno =sc.next();
+		System.out.print("이름>>");
+		String name =sc.next();
+		System.out.print("연봉>>");
+		int yearSalary =sc.nextInt();
+		System.out.print("계약기간>>");
+		int hireYear =sc.nextInt();
+		TempEmployee emp =
+				new TempEmployee(empno, name, yearSalary,hireYear);
+		return emp;
+		
 	}
 	private PartTimeEmployee creatPartTimeEmployee() {
-		return null;
+		System.out.print("사번>>");
+		String empno =sc.next();
+		System.out.print("이름>>");
+		String name =sc.next();
+		System.out.print("일당>>");
+		int dailyPay =sc.nextInt();
+		System.out.print("일한 일수>>");
+		int workDay =sc.nextInt();
+		PartTimeEmployee emp =
+				new PartTimeEmployee(empno, name, dailyPay,workDay);
+		return emp;
+		
 	}
 	private boolean saveEmployee(Employee emp) {
 		boolean isSave =true;
@@ -57,8 +82,32 @@ public class EmployeeManager {
 		for(int i =0; i<this.numOfEmp;i++) {
 			this.empArr[i].showEmployeeInfo();
 		}
+	}
+		private void viewRegEmployeeInfo() {
+			for(int i =0; i<this.numOfEmp;i++) {
+				if(empArr[i] instanceof RegularEmployee) { 
+					{empArr[i].showEmployeeInfo();
+				}
+			}
 		
 	}
+		}
+		private void viewTempEmployeeInfo() {
+			for(int i =0; i<this.numOfEmp;i++) {
+				if(empArr[i] instanceof TempEmployee) { 
+					{empArr[i].showEmployeeInfo();
+			}
+		
+	}
+			}
+		}
+		private void viewPartInfo() {
+			for(int i =0; i<this.numOfEmp;i++) {
+				this.empArr[i].showEmployeeInfo();
+			}
+		
+	}
+	
 	public void run() {
 		boolean isRun = true;
 		while(isRun) {
@@ -75,8 +124,16 @@ public class EmployeeManager {
 			case EmpMenu.PART_EMP:
 				emp=creatPartTimeEmployee();
 				break;
+			case EmpMenu.REG_INFO:
+				viewRegEmployeeInfo();
+				break;
+			case EmpMenu.TEMP_INFO:
+				emp=createTempEmployee();
+				break;
+			case EmpMenu.PART_INFO:
+				emp=creatPartTimeEmployee();
+				break;
 			case EmpMenu.ALL_INFO:
-				emp=null;
 				viewAllEmployeeInfo();
 				break;
 			case EmpMenu.EXIT:

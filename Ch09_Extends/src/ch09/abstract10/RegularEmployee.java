@@ -22,7 +22,7 @@ public class RegularEmployee extends Employee {
 	public void showEmployeeInfo() {
 		super.showEmployeeInfo();// Employee show 호출
 	System.out.println("bonus: " + bonus);
-	System.out.println("monthPay: " + getMonthPay());
+	System.out.printf("monthPay : %.2f: \n", getMonthPay());
 	}
 	
 
