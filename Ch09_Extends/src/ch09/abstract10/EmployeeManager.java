@@ -92,7 +92,7 @@ public class EmployeeManager {
 		
 	}
 		}
-		private void viewTempEmployeeInfo() {
+		private void viewTemEmployeeInfo() {
 			for(int i =0; i<this.numOfEmp;i++) {
 				if(empArr[i] instanceof TempEmployee) { 
 					{empArr[i].showEmployeeInfo();
@@ -101,12 +101,15 @@ public class EmployeeManager {
 	}
 			}
 		}
-		private void viewPartInfo() {
+		private void viewParEmployeeInfo() {
 			for(int i =0; i<this.numOfEmp;i++) {
-				this.empArr[i].showEmployeeInfo();
+				if(empArr[i] instanceof PartTimeEmployee) { 
+					{empArr[i].showEmployeeInfo();
 			}
 		
 	}
+			}
+		}
 	
 	public void run() {
 		boolean isRun = true;
@@ -128,10 +131,10 @@ public class EmployeeManager {
 				viewRegEmployeeInfo();
 				break;
 			case EmpMenu.TEMP_INFO:
-				emp=createTempEmployee();
+				viewTemEmployeeInfo();
 				break;
 			case EmpMenu.PART_INFO:
-				emp=creatPartTimeEmployee();
+				viewParEmployeeInfo();
 				break;
 			case EmpMenu.ALL_INFO:
 				viewAllEmployeeInfo();
