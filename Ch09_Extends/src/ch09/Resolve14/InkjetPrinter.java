@@ -2,6 +2,11 @@ package ch09.Resolve14;
 
 public class InkjetPrinter  implements PrintUnit{
 
+	private int inkResidue;
+	
+	public InkjetPrinter(int inkResidue) {
+		this.inkResidue =inkResidue;
+	}
 	@Override
 	public void modelName() {
 		System.out.println("잉크젯: 잉크마를날없다.");
@@ -32,6 +37,20 @@ public class InkjetPrinter  implements PrintUnit{
 		
 	}
 	
-	private int inkResidue;
+	
+	
+	
+	
+	public void print() {
+		for(int i =inkResidue; inkResidue>0;inkResidue--) {
+			System.out.println();
+			System.out.println("----잉크젯----");
+			System.out.println("1장 출력되었습니다.");
+			
+		}if(inkResidue ==0) {
+			System.out.println("잉크가 부족합니다.");
+		}
+		
+	}
 
 }
