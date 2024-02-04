@@ -11,7 +11,7 @@ public class BaseBall {
 	private int[] numbers = new int[3];
 	
 	public int viewMenu() {
-		System.out.println("-----야구게임------");
+		System.out.println("-----삼진아웃게임------");
 				System.out.println(" [ 메뉴 선택 ] ");
 		System.out.println("1. 게임시작 " );
 		System.out.println("2. 끝내기 ");
@@ -20,19 +20,20 @@ public class BaseBall {
 		sel = sc.nextInt();
 		return sel;
 	}
-	
-	public void baseBallGame() {
-	 	switch (sel) {
-		case 1:
-			
-		System.out.println("1P는 0~9까지 숫자중 3개를 입력하시오(중복금지)");
+	public void inputNumbers() { 	
+		System.out.println("0~9까지 숫자중 3개를 입력하시오(중복금지)");
 	 	
 		for(int i=0; i<3; i++) {
 			numbers[i] = sc.nextInt();
-		
 		}
-			System.out.println("투수 던졌습니다! 상대타자...");
-				
+		}   
+	public void baseBallGame() {
+		 switch (sel) {
+		case 1:
+			
+			System.out.println("...어느새 9회말2아웃 마지막승부!");
+			System.out.println("상대 4번타자 타석에 들어섰습니다!");
+			System.out.println("당신은 마지막 구원투수 입니다.!");
 			
 			
 			
