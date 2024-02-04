@@ -3,7 +3,7 @@ package ch09.Resolve16;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class DecisionBall {
+public class DecisionBall { // 스트라이크와 볼을 확인하고 계속 진행과 끝을 결정함
 	
 	private String sel;
 	Scanner scanner = new Scanner(System.in);

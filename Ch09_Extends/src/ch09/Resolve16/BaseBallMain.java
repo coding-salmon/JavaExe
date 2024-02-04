@@ -1,7 +1,7 @@
 package ch09.Resolve16;
 
 
-public class BaseBallMain {
+public class BaseBallMain { //삼진아웃게임의 메인실행
 	public static void main(String[] args) {
 		BaseBall bbm = new BaseBall();
 	

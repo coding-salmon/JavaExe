@@ -2,7 +2,7 @@ package ch09.Resolve16;
 
 public class GeneratorThreeNum {
 
-	public static int[] generatorNumbers() {
+	public static int[] generatorNumbers() { //컴퓨터가 3개의 숫자를 생성함
 		int[] randomNumbers = new int[3];
 		int count =0;
 		
@@ -24,7 +24,8 @@ public class GeneratorThreeNum {
 			}
 		}
 	
-	return false;
 
+		return false;
+ 
 }
 }
