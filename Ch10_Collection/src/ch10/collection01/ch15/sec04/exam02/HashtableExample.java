@@ -5,6 +5,15 @@ package ch10.collection01.ch15.sec04.exam02;
  * 맵 Key값,Value값  Dictionary 구조
  * 검색에 특화 
  * 
+ * HashMap과 Hashtable은 내부 자료구조가 동일하다.
+ * 차이점은 Arraylist오 Vector처럼 멀티스레드에 동기화되어 있냐는 차이다.
+ * Vector와 Hashtable은 멀티스레드에 안전할 수 있도록 동기화처리 되어있다.
+ * 멀티스레드 환경에서는 1개의 변수를 동시에 여러 개 스레드가 접근할때 
+ * 값의 왜곡이 발생하므로 이것을 막아주는 것을 '동기화'라고 한다
+ * 
+ * 일반적인 1개 main thread환경에서는
+ * 동기화 처리가 되어있는 Vector와 Hashtable이 좀더 느리다.
+ * 
  * 
  */
 import java.util.*;
