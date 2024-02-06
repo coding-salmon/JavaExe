@@ -3,6 +3,8 @@ package ch10.collection01.ch15.sec04.exam01;
 import java.util.*;
 
 public class HashSetExample {
+//	public static void printAll(Iterator<String>iterator) {
+//		while(iterator)
 	public static void main(String[] args) {
 		//HashSet 컬렉션 생성
 		Set<String> set = new HashSet<String>();
@@ -12,6 +14,13 @@ public class HashSetExample {
 		set.add("JDBC");
 		set.add("JSP");
 		set.add("Spring");
+		
+		/*
+		 * 다른 컬렉션들도 Iterator인터페이스 상속을 받아 구현하였다.
+		 * Iterator는 데이터의 처음부터 계속 끝까지 사용한다.
+		 * 알고리즘이 다른 컬렉션을 Iterator라는 1가지 방식으로 가져올 수
+		 * 있게 하므로 효율성을 가져옴
+		 */
 		
 		//객체를 하나씩 가져아서 처리
 		Iterator<String> iterator = set.iterator();

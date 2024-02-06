@@ -1,5 +1,12 @@
 package ch10.collection01.ch15.sec04.exam02;
 
+
+/*
+ * 맵 Key값,Value값  Dictionary 구조
+ * 검색에 특화 
+ * 
+ * 
+ */
 import java.util.*;
 public class HashtableExample {
 	public static void main(String[] args) {

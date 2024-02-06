@@ -7,6 +7,7 @@ public class LinkedListExample {
 		//ArrayList 컬렉션 객체 생성
 		List<String>list1 = new ArrayList<String>();
 		
+		
 		//LinkedList 컬렉션 객체 생성
 		List<String>list2 = new LinkedList<String>();
 		
@@ -18,6 +19,7 @@ public class LinkedListExample {
 		startTime = System.nanoTime();
 		for(int i=0; i<10000; i++) {
 			list1.add(0,String.valueOf(i));
+			//list1.add(String.valueOf(i));	
 		}
 		
 		endTime = System.nanoTime();
@@ -27,6 +29,7 @@ public class LinkedListExample {
 		startTime = System.nanoTime();
 		for(int i=0; i<10000; i++) {
 			list2.add(0,String.valueOf(i));
+			//list2.add(String.valueOf(i));
 		}
 		endTime = System.nanoTime();
 		System.out.printf("%-17s %8d ns \n", "Linkedlist 걸린 시간: ", (endTime-startTime));
