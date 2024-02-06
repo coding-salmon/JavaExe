@@ -15,7 +15,7 @@ public class PerfomanceEx {
 		for(int i =0; i<128;i++) {
 			result = BigInteger.valueOf(1);
 			for(int j=0;j<cnt;j++) {
-				result.multiply(BigInteger.TWO);
+				result = result.multiply(BigInteger.TWO);
 			}
 			sum = sum.add(result);
 			cnt++;
