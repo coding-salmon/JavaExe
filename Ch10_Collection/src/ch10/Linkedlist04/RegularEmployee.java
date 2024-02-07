@@ -27,10 +27,20 @@ public class RegularEmployee extends Employee{
 		System.out.printf("monthPay : %.2f\n", getMonthPay());
 	}
 
+	public void setName(String newName) {
+		this.name = newName;
+		
+	}
+	
+	
+	
+	
 	public void setYearSalary(int newYearSalary) {
+		this.yearSalary = newYearSalary;
 		}
 
 	public void setBonus(int newBonus) {
+		this.bonus = newBonus;
 	}
 
 	

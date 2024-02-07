@@ -18,4 +18,10 @@ public abstract class Employee {
 		System.out.println("name : " + name);
 	}
 	public abstract double getMonthPay();	// 추상메서드
-}
+	
+		
+	}
+
+	
+	
+

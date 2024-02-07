@@ -7,8 +7,8 @@ public abstract class Employee {
 	public String getEmpno() {
         return empno;
 	}
-	public String setName(String newName) {
-		return newName;
+	public void setName(String newName) {
+		this.name = newName;
 	}
 	public Employee(String empno, String name) {
 		this.empno = empno;
@@ -24,4 +24,5 @@ public abstract class Employee {
 		// TODO Auto-generated method stub
 		
 	}
+	 
 }

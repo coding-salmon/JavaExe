@@ -27,6 +27,8 @@ public class PartTimeEmployee extends Employee{
 		System.out.printf("monthPay : %.2f\n", getMonthPay());
 	}
 
+	
+
 }
 
 

@@ -1,4 +1,8 @@
 package ch10.Linkedlist04;
+import ch10.Linkedlist04.RegularEmployee;
+import ch10.Linkedlist04.TempEmployee;
+import ch10.Linkedlist04.PartTimeEmployee;
+import ch10.Linkedlist04.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,82 +11,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import ch10.hashmap02.Employee;
-import ch10.hashmap02.PartTimeEmployee;
-import ch10.hashmap02.RegularEmployee;
-import ch10.hashmap02.TempEmployee;
 
 public class EmployeeManager {
 	private final int EMP_NUM = 100;	// 100명 사원이 최대
 	// Employee의 자식객체들을 저장
-	private Map<String, Employee> empArr = new HashMap<>();
-	//private Employee[] empArr = new Employee[EMP_NUM];
+	private Map<String, Employee> empMap = new HashMap<>();
+	
 	private int numOfEmp = 0;	// 저장된 사원객체 수, 다음 사원이 저장될 index
 	private Scanner sc = new Scanner(System.in);
 	
 	
-	private void modifyEmployee(Employee emp) { //사번으로 수정하는 메서드
-		Employee emp = empMap.get(empno);
-		if (emp != null) {
-		if (emp instanceof RegularEmployee) {
-	        RegularEmployee = (RegularEmployee) emp;
-			System.out.print("새로운 이름 입력 >> ");
-	        String newName = sc.next();
-	        regEmp.setName(newName);
-	        
-	        System.out.print("새로운 연봉 입력 >> ");
-	        int newYearSalary = sc.nextInt();
-	        regEmp.setYearSalary(newYearSalary);
-	        
-	        System.out.print("새로운 보너스 입력 >> ");
-	        int newBonus = sc.nextInt();
-	        regEmp.setBonus(newBonus);
-	        
-	        System.out.println("정규직 사원 정보가 수정되었습니다.");
-	    } else if (emp instanceof TempEmployee) {
-	        System.out.print("새로운 이름 입력 >> ");
-	        String newName = sc.next();
-	        tempEmp.setName(newName);
-	        
-	        System.out.print("새로운 연봉 입력 >> ");
-	        int newYearSalary = sc.nextInt();
-	        ((TempEmployee) emp).setYearSalary(newYearSalary);
-	        
-	        System.out.print("새로운 계약기간 입력 >> ");
-	        int newHireYear = sc.nextInt();
-	        temp.setHireYear(newHireYear);
-	        
-	        System.out.println("임시직 사원 정보가 수정되었습니다.");
-	    } else if (emp instanceof PartTimeEmployee) {
-	        PartTimeEmployee partEmp = (PartTimeEmployee) emp;
-	    	System.out.print("새로운 이름 입력 >> ");
-	        String newName = sc.next();
-	        ((PartTimeEmployee) emp).setName(newName);
-	        
-	        System.out.print("새로운 일당 입력 >> ");
-	        int newDailyPay = sc.nextInt();
-	        ((PartTimeEmployee) emp).setDailyPay(newDailyPay);
-	        
-	        System.out.print("새로운 근무일 입력 >> ");
-	        int newWorkDay = sc.nextInt();
-	        ((PartTimeEmployee) emp).setWorkDay(newWorkDay);
-	        
-	        System.out.println("일용직 사원 정보가 수정되었습니다.");
-	    } else {
-	        System.out.println("해당 사번을 가진 사원이 존재하지 않습니다.");
-	}
-	}
-	
-	private void deleteEmployee(String empno) {
-		 Employee emp = empArr.get(empno);
-		    if (emp != null) {
-		        empArr.remove(empno);
-		        System.out.println("사원 정보가 삭제되었습니다.");
-		    } else {
-			System.out.println("해당 사번을 가진 사원이 존재하지 않습니다.");
-		}
-		
-	}
 	
 	private int viewMenu() {
 		System.out.println("[ 사원 선택 ]");
@@ -143,7 +81,7 @@ public class EmployeeManager {
 		
 		if(this.numOfEmp < EMP_NUM) {
 			String empno = emp.getEmpno();
-			this.empArr.put(empno, emp);
+			this.empMap.put(empno, emp);
 			this.numOfEmp++;
 			isSave = true;
 		}else {
@@ -153,30 +91,30 @@ public class EmployeeManager {
 		return isSave;
 	}
 	private void viewAllEmployeeInfo() {
-		for(Employee emp : this.empArr.values()) {
+		for(Employee emp : this.empMap.values()) {
 			emp.showEmployeeInfo();
 		}
 	}
 	private void viewRegEmployeeInfo() {
-		for(Employee emp : this.empArr.values()) {
+		for(Employee emp : this.empMap.values()) {
 			if(emp instanceof RegularEmployee)
 				emp.showEmployeeInfo();
 		}
 	}
 	private void viewTempEmployeeInfo() {
-		for(Employee emp : this.empArr.values()) {
+		for(Employee emp : this.empMap.values()) {
 			if(emp instanceof TempEmployee)
 				emp.showEmployeeInfo();
 		}
 	}
 	private void viewPartTimeEmployeeInfo() {
-		for(Employee emp : this.empArr.values()) {
+		for(Employee emp : this.empMap.values()) {
 			if(emp instanceof PartTimeEmployee)
 				emp.showEmployeeInfo();
 		}
 	}
 	private Employee search(String empno) {
-	    for (Map.Entry<String, Employee> entry : empArr.entrySet()) {
+	    for (Map.Entry<String, Employee> entry : empMap.entrySet()) {
 	        if (entry.getKey().equals(empno)) {
 	            return entry.getValue();
 	        }
@@ -191,18 +129,13 @@ public class EmployeeManager {
 		
 		if(emp != null) {
 			System.out.println("사번"+searchEmpno+"에 해당하는 사원정보:");
-			if(emp instanceof RegularEmployee) {
-				((RegularEmployee) emp).showEmployeeInfo();
-			} else if (emp instanceof TempEmployee) {
-		        ((TempEmployee) emp).showEmployeeInfo();
-		    } else if (emp instanceof PartTimeEmployee) {
-		        ((PartTimeEmployee) emp).showEmployeeInfo();
-		    }
+			emp.showEmployeeInfo();
 			System.out.println("1.수정 2.삭제 3 돌아가기");
+			
 			int choice = sc.nextInt();
 			switch(choice) {
 			case 1:
-				modifyEmployee(emp);
+				modifyEmployee(searchEmpno);
 				break;
 			case 2:
 				deleteEmployee(searchEmpno);
@@ -222,7 +155,83 @@ public class EmployeeManager {
 			
 				
 			}
+	private void modifyEmployee(String empNo) { //사번으로 수정하는 메서드
+		Employee emp = empMap.get(empNo);
+		if(emp == null) {
+		 System.out.println("해당 사번을 가진 사원이 존재하지 않습니다.");
+		return;
+		}
+	        
+	        
+	        if(emp instanceof RegularEmployee) {
+	        	
+	        	 RegularEmployee regEmp = (RegularEmployee) emp;
+	        	 System.out.print("새로운 이름 입력 >> ");
+	 	        String newName = sc.next();
+	 	        regEmp.setName(newName);
+	        System.out.print("새로운 연봉 입력 >> ");
+	        int newYearSalary = sc.nextInt();
+	        regEmp.setYearSalary(newYearSalary);
+	        
+	        System.out.print("새로운 보너스 입력 >> ");
+	        int newBonus = sc.nextInt();
+	        regEmp.setBonus(newBonus);
+	        
+	        
+	        System.out.println("정규직 사원 정보가 수정되었습니다.");
+	    } else if (emp instanceof TempEmployee) {
+	    	TempEmployee tempEmp = (TempEmployee) emp;
+	    	System.out.print("새로운 이름 입력 >> ");
+	        String newName = sc.next();
+	        
+	        tempEmp.setName(newName);
+	        
+	        System.out.print("새로운 연봉 입력 >> ");
+	        int newYearSalary = sc.nextInt();
+	        tempEmp.setYearSalary(newYearSalary);
+	        
+	        System.out.print("새로운 계약기간 입력 >> ");
+	        int newHireYear = sc.nextInt();
+	        tempEmp.setHireYear(newHireYear);
+	        
+	        System.out.println("임시직 사원 정보가 수정되었습니다.");
+	    } else if (emp instanceof PartTimeEmployee) {
+	    	PartTimeEmployee partTimeEmp = (PartTimeEmployee) emp;
+	    	System.out.print("새로운 이름 입력 >> ");
+	        String newName = sc.next();
+	        partTimeEmp.setName(newName);
+	        
+	        System.out.print("새로운 일당 입력 >> ");
+	        int newDailyPay = sc.nextInt();
+	        partTimeEmp.setDailyPay(newDailyPay);
+	        
+	        System.out.print("새로운 근무일 입력 >> ");
+	        int newWorkDay = sc.nextInt();
+	        partTimeEmp.setWorkDay(newWorkDay);
+	        
+	        System.out.println("일용직 사원 정보가 수정되었습니다.");
+	    } else {
+	       System.out.println("잘못된 사원 유형입니다.");
+	       return;
+	       
+	       
+    }
+	        empMap.put(empNo, emp);
+	 
+}
+
+
+private void deleteEmployee(String empno) {
+	 Employee emp = empMap.get(empno);
+	    if (emp != null) {
+	        empMap.remove(empno);
+	        System.out.println("사원 정보가 삭제되었습니다.");
+	    } else {
+		System.out.println("해당 사번을 가진 사원이 존재하지 않습니다.");
+	}
 	
+}
+
 	public void run() {
 		boolean isRun = true;
 		while(isRun) {

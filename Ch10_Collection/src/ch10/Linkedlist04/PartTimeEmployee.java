@@ -26,11 +26,17 @@ public class PartTimeEmployee extends Employee{
 		System.out.println("workDay : " + workDay);
 		System.out.printf("monthPay : %.2f\n", getMonthPay());
 	}
-
+	public void setName(String name) {
+        this.name = name;
+	
+	}
+	
 	public void setDailyPay(int newDailyPay) {
+		
 	}
 
 	public void setWorkDay(int newWorkDay) {
+		
 	}
 
 }

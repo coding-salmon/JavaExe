@@ -27,6 +27,7 @@ public class TempEmployee extends Employee{
 		System.out.printf("monthPay : %.2f\n", getMonthPay());
 	}
 
+
 	
 }
 

@@ -26,11 +26,18 @@ public class TempEmployee extends Employee{
 		System.out.println("hireYear : " + hireYear);
 		System.out.printf("monthPay : %.2f\n", getMonthPay());
 	}
-
+	
+	public void setName(String name) {
+        this.name = name;
+	
+	}
+	
 	public void setYearSalary(int newYearSalary) {
+
 	}
 
 	public void setHireYear(int newHireYear) {
+	
 	}
 
 	
