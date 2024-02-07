@@ -17,6 +17,10 @@ public class StringBuilderExample {
 		public MyStringBuilder append(String str) {
 			char[] chArr = str.toCharArray();
 			for(char ch : chArr)
+				/* Boxing
+				 * 기본타입 / 지역변수 ch는 스택에 존재
+				 * chList.add(ch)
+				 */
 				chList.add(ch);
 			
 			return this;
