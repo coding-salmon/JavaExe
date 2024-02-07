@@ -12,7 +12,7 @@ public class StackExample {
 		coinBox.push(new Coin(50));
 		coinBox.push(new Coin(500));
 		coinBox.push(new Coin(10));
-		
+		coinBox.push(new Coin(100));
 		//동전을 하나씩 꺼내ㅣ
 		
 		while(!coinBox.isEmpty()) { // 비어있지 않다면 반복
