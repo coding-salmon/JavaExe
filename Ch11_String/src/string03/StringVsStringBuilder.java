@@ -4,7 +4,7 @@ package string03;
 // https : // 12bme.tistory.com/42
 
 /*
- * String : immutable(불편)
+ * String : immutable(불변)
  * StringBuilder : mutable (변함)
  * StringBuffer : mutable(변함), 멀티스레드 동기화 처리 
 ) */
