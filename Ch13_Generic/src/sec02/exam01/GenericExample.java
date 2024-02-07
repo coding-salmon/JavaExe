@@ -12,6 +12,8 @@ public class GenericExample {
 		//Getter 리턴값은 Tv와 String이 됨
 		Tv tv = product1.getKind();
 		String TvModel = product1.getModel();
+		
+		
 		//--------------------------------------------------------
 		
 		//K는 Car로 대체, M은 String으로 대체
