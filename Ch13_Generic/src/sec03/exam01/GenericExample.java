@@ -2,6 +2,7 @@ package sec03.exam01;
 
 public class GenericExample {
 	//제네릭 메소드
+	//          타입파라티미터 리턴값자료형   매개변수
 	public static <T> Box<T> boxing(T t){ // 타입 파라미터 T정의
 		Box<T> box = new Box<T>();
 		box.set(t);

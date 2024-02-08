@@ -1,4 +1,4 @@
-package ch10.Linkedlist04;
+package ch10.hashmap04;
 
 // 임시직 사원
 public class TempEmployee extends Employee{

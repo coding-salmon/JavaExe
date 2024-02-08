@@ -1,4 +1,4 @@
-package ch10.Linkedlist04;
+package ch10.hashmap04;
 
 public abstract class Employee {
 	protected String empno;		// 사번

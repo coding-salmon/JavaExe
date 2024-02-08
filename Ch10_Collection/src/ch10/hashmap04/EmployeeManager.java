@@ -1,15 +1,12 @@
-package ch10.Linkedlist04;
-import ch10.Linkedlist04.RegularEmployee;
-import ch10.Linkedlist04.TempEmployee;
-import ch10.Linkedlist04.PartTimeEmployee;
-import ch10.Linkedlist04.*;
-
+package ch10.hashmap04;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
+import ch10.hashmap04.*;
 
 
 public class EmployeeManager {
@@ -165,10 +162,10 @@ public class EmployeeManager {
 	        
 	        if(emp instanceof RegularEmployee) {
 	        	
-	        	 RegularEmployee regEmp = (RegularEmployee) emp;
-	        	 System.out.print("새로운 이름 입력 >> ");
-	 	        String newName = sc.next();
-	 	        regEmp.setName(newName);
+	        RegularEmployee regEmp = (RegularEmployee) emp;
+	        System.out.print("새로운 이름 입력 >> ");
+	 	    String newName = sc.next();
+	 	    regEmp.setName(newName);
 	        System.out.print("새로운 연봉 입력 >> ");
 	        int newYearSalary = sc.nextInt();
 	        regEmp.setYearSalary(newYearSalary);

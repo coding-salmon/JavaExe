@@ -2,6 +2,7 @@ package sec02.exam03;
 
 public class GeneriExample {
 	public static void main(String[] args) {
+		/* Box<T>에서 T를 지정하지 않으면 자동으로 Object로 결정된다 모든것을 받을수 있다.*/
 		Box box1 = new Box();
 		box1.content = "100";
 		

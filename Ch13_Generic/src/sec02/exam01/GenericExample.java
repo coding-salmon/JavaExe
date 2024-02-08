@@ -11,8 +11,10 @@ public class GenericExample {
 		
 		//Getter 리턴값은 Tv와 String이 됨
 		Tv tv = product1.getKind();
-		String TvModel = product1.getModel();
-		
+		String tvModel = product1.getModel();
+		System.out.println(product1);
+		System.out.println(tv);
+		System.out.println(tvModel);
 		
 		//--------------------------------------------------------
 		
@@ -26,6 +28,9 @@ public class GenericExample {
 		//Getter 리턴값은 Car와 String이 됨
 		Car car = product2.getKind();
 		String carModel = product2.getModel();
+		System.out.println(product2);
+		System.out.println(car);
+		System.out.println(carModel);
 	}
 
 }

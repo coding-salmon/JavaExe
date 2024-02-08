@@ -1,4 +1,4 @@
-package ch10.Linkedlist04;
+package ch10.hashmap04;
 
 // 일용직 사원
 public class PartTimeEmployee extends Employee{

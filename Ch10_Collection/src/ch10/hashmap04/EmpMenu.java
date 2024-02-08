@@ -1,4 +1,4 @@
-package ch10.Linkedlist04;
+package ch10.hashmap04;
 
 public interface EmpMenu {
 	public int REG_EMP = 1;

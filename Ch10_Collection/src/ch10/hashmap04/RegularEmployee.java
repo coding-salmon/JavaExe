@@ -1,4 +1,4 @@
-package ch10.Linkedlist04;
+package ch10.hashmap04;
 
 // 정규직 사원
 public class RegularEmployee extends Employee{
