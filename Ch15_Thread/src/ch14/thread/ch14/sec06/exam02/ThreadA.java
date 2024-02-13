@@ -12,6 +12,7 @@ public class ThreadA extends Thread{
 	public void run() {
 		for(int i=0; i<10; i++) {
 			workObject.methodA(); //동기화 메소드 호출
+			
 		}
 	}
 
