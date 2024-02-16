@@ -43,17 +43,27 @@ public class CoffeeDatabase {
 		}
 	}
 	
+	
 	public String getCoffeeInfo(int coffeeId) {
 		String coffeeInfo="";
 		try {
 			String query = "SELECT*FROM Coffee WHERE coffee_id = ?";
-			PreparedStatement statement = connection.preparestatement(query);
+			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setInt(1, coffeeId);
 			ResultSet resultSet = statement.executeQuery();
 			if(resultSet.next()) {
-				int id = resultSet.getInt("coffee_id");
+				String name = resultSet.getString("name");
+				double price = resultSet.getDouble("price");
+			}else {
+				coffeeInfo ="coffee ID: " +coffeeId + " not found.";
 			}
+			resultSet.close();
+			statement.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+			coffeeInfo = "커피 정보를 검색하는 중 오류가 발생했습니다.";
 		}
+		return coffeeInfo;
 	}
 
 }

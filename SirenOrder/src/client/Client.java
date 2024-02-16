@@ -15,28 +15,69 @@ public class Client {
 	public static void main(String[] args) {
 		final String IP = "127.0.0.1";
 		final int PORT = 9001;
-		String id = "";
-		Socket socket = null;
-		PrintWriter pw = null;
-		BufferedReader br = null;
-		Scanner scan = null;
 		
-		try {
-			
-			socket = new Socket (IP, PORT);
-			pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
-			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			
+		
+		try ( 
+			Socket socket = new Socket(IP, PORT);
+			PrintWriter pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			Scanner scan = new Scanner(System.in)){
+		
 			ReceiveThread rt = new ReceiveThread(br);
 			rt.start();
 			
-			id = sendId(scan, pw);
+			String id = sendId(scan, pw);
 			Thread.sleep(300);
 			
+			while(true) {
+				System.out.println("메뉴를 선택하세요:");
+				System.out.println("1: [커피 주문]");
+				System.out.println("2: [전체 채팅 보내기]");
+				System.out.println("3: [1:1채팅]");
+				System.out.println("4: [종료]");
+				String choice = scan.nextLine();
+				
+				switch (choice) {
+                case "1":
+                    sendOrder(scan, pw, id);
+                    break;
+                case "2":
+                    sendAllChat(scan, pw, id);
+                    break;
+                case "3":
+                    sendOneChat(scan, pw, id); // 1:1 채팅 메소드 호출
+                    break;
+                case "4":
+                    System.out.println("클라이언트를 종료합니다.");
+                    return; // 메인 메소드 종료로 프로그램 종료
+                default:
+                    System.out.println("잘못된 입력입니다.");
+				}
+			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public static String sendId(Scanner sc, PrintWriter pw) {
+		System.out.println("사이렌오더에 사용할 ID를 입력하세요. >>");
+		String id = sc.nextLine();
+		
+		JSONObject idObj = new JSONObject();
+		idObj.put("cmd", "ID");
+		idObj.put("id", id);
+		
+		String packet = idObj.toString();
+		pw.println(packet);
+		pw.flush();
+		
+		return id;
+	}
+
+
+
+	
+	
 	public static void sendAllChat (Scanner sc, PrintWriter pw, String id) {
 		boolean isRun = true;
 		while(isRun) {
@@ -55,26 +96,28 @@ public class Client {
 			
 			pw.println(packet);
 			pw.flush();
+		
 		}
 	}
-	
-	public static String sendId(Scanner sc, PrintWriter pw) {
-		System.out.println("당신의 id 입력 >>");
-		String id = sc.nextLine();
+	public static void sendOneChat(Scanner sc, PrintWriter pw, String id) {
+		System.out.println("대화할 상대방의 ID를 입력하세요:");
+		String yourId = sc.nextLine();
+		System.out.println("보낼 메시지를 입력하세요:");
+		String message = sc.nextLine();
 		
-		JSONObject idObj = new JSONObject();
-		idObj.put("cmd", "ID");
-		idObj.put("id", id);
+		JSONObject chatObj = new JSONObject();
+		chatObj.put("cmd", "ONECHAT");
+		chatObj.put("yourId", yourId);
+		chatObj.put("id", id);
+		chatObj.put("msg",message);
 		
-		String packet = idObj.toString();
-		pw.println(packet);
+		pw.println(chatObj.toString());
 		pw.flush();
 		
-		return id;
 	}
-
-}
-
+	
+	
+	
 class ReceiveThread extends Thread{
 	private BufferedReader br = null;
 	
@@ -131,5 +174,9 @@ class ReceiveThread extends Thread{
 	else if(cmd.equals("UNICHAT")) {
 		
 	}
+	}
 }
 }
+
+
+
